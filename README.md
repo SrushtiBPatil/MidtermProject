@@ -1,14 +1,14 @@
-# Applied NLP: Midterm Project — Language Modeling Architecture Comparison
+# Applied NLP: Midterm Project - Language Modeling Architecture Comparison
 
 ## Overview
-This repository contains an individual comparative study of three language modeling architectures trained from scratch on *Alice in Wonderland* (via Project Gutenberg)[cite: 11]. The objective of this project is not to build a production-scale foundation model, but rather to empirically examine how different neural and statistical architectures scale in capability, handle sequence context, and balance compute complexity.
+This repository contains an individual comparative study of three language modeling architectures trained from scratch on *Alice in Wonderland* (via Project Gutenberg). The objective of this project is to empirically examine how different neural and statistical architectures scale in capability, handle sequence context, and balance compute complexity.
 
 ---
 
 ## Repository Structure
 - `README.md`: Project summary, architecture details, evaluation metrics, and reflections.
 - `midterm_project.ipynb`: The complete executable Jupyter notebook containing data loading, training loops, generation scripts, and model evaluations.
-- `ai_use_summary.md`: Summary documentation detailing responsible AI collaboration during development.
+- `ai_use_summary.md`: Summary documentation detailing AI collaboration during development.
 
 ---
 
@@ -18,8 +18,8 @@ All three models are trained to solve the exact same task: **Character-level Nex
 ---
 
 ## 2. Dataset Used
-- **Source:** *Alice in Wonderland* by Lewis Carroll (retrieved via Project Gutenberg)[cite: 11].
-- **Preprocessing:** Cleaned of header/footer boilerplate, mapped to a character-level vocabulary (`vocab_size = 76`), and split deterministically into a 90% training set (130,226 tokens) and a 10% validation set (14,470 tokens)[cite: 11].
+- **Source:** *Alice in Wonderland* by Lewis Carroll (retrieved via Project Gutenberg).
+- **Preprocessing:** Cleaned of header/footer boilerplate, mapped to a character-level vocabulary (`vocab_size = 76`), and split deterministically into a 90% training set (130,226 tokens) and a 10% validation set (14,470 tokens).
 
 ---
 
@@ -34,9 +34,9 @@ All three models are trained to solve the exact same task: **Character-level Nex
 
 | Model | Train Loss | Validation Loss | Training Time | Generated Text Quality Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| **Bigram** | — | 2.4405 | 2.81 seconds[cite: 11] | Low quality. Generates broken character strings, gibberish word clusters, and random punctuation fragments. |
-| **Non-Transformer (LSTM)** | 2.1421 *(Epoch 3)*[cite: 11] | 1.9865[cite: 11] | 53.01 seconds[cite: 11] | Medium quality. Successfully captures short-term English structure, common words, proper spacing, and dialogue markers. |
-| **Transformer** | 2.0546 *(Epoch 3)*[cite: 11] | 1.9296[cite: 11] | 291.29 seconds[cite: 11] | High quality. Learns complex word structures, punctuation formatting, and short phrase coherence more reliably. |
+| **Bigram** | — | 2.4405 | 2.81 seconds | Low quality. Generates broken character strings, gibberish word clusters, and random punctuation fragments. |
+| **Non-Transformer (LSTM)** | 2.1421 *(Epoch 3)* | 1.9865 | 53.01 seconds | Medium quality. Successfully captures short-term English structure, common words, proper spacing, and dialogue markers. |
+| **Transformer** | 2.0546 *(Epoch 3)* | 1.9296 | 291.29 seconds | High quality. Learns complex word structures, punctuation formatting, and short phrase coherence more reliably. |
 
 ---
 
@@ -61,6 +61,5 @@ All three models are trained to solve the exact same task: **Character-level Nex
 
 ---
 
-## 7. Responsible AI Use Summary (`ai_use_summary.md`)
-- **Assistance Provided:** AI collaborators assisted in structuring the PyTorch data-batching generators, verifying PyTorch state tensor management, drafting markdown reporting templates, and troubleshooting shape mismatch issues.
-- **Independent Understanding:** All core architectural concepts (self-attention matrix masking, causal relationships, gradient backpropagation through time, and cross-entropy loss optimization) were thoroughly reviewed, debugged, and understood independently.
+## 7. AI Use Summary
+During the development of this project, AI was utilized as an assistant for occasional error solving (such as fixing tensor layout issues and debugging shape mismatches) and for code structure suggestions. All conceptual designs, implementation logic, analysis, and written reflections were reviewed and understood independently.
